@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<section id="home" class="hero">
+    <div class="container d-flex flex-column flex-lg-row align-items-center justify-content-between">
+
+        <div class="hero-text text-center text-lg-start">
+            <span class="badge custom-badge mb-3">Dasar-Dasar Pemrograman</span>
+
+            <h1 class="hero-title fw-bold">
+                <span id="typing-name"></span>
+            </h1>
+
+            <p class="subtitle mb-3">Informatics Engineering Student</p>
+
+            <p class="lead mt-3 hero-description">
+                I'm an Informatics Engineering student passionate about technology and creative problem solving. I love learning new skills and building functional digital solutions.
+            </p>
+
+            <a href="#gallery" class="btn btn-outline-light mt-3 hero-btn">Gallery →</a>
+        </div>
+
+        <div class="hero-photo mt-4 mt-lg-0">
+            <img src="{% static 'images/profile1.jpg' %}" alt="Profile">
+        </div>
+
+    </div>
+</section>
+
+<section id="about" class="section">
+    <div class="container">
+
+        <h2 class="section-title reveal"><b>ABOUT ME</b></h2>
+
+        <div class="glass-box about-box reveal">
+            <p class="about-text">
+                I'm a student majoring in Informatics Engineering with interests in web development, data processing, and networking fundamentals. Familiar with programming projects and logic exercises, I use HTML, CSS, JavaScript, Python, Linux, and Git, and understand basic computer networking concepts (TCP/IP) to build simple, functional, and continuously evolving digital solutions.
+            </p>
+            <p class="about-text">
+                During my studies, I was accustomed to working on projects and programming exercises that trained logic, problem-solving, and structured work. In development, I used HTML, CSS, JavaScript, PHP, MySQL, and Python for basic data processing. I also have a basic understanding of Linux, Git, and computer networking concepts (TCP/IP) as supporting systems for building simple, functional, and continuously evolving digital solutions.
+            </p>
+        </div>
+
+        <div class="row g-4 justify-content-center mt-5">
+            <div class="col-md-4 reveal-left">
+                <div class="glass-box hover-glow">
+                    <h4>Hobby</h4>
+                    <ul class="edu-list opacity-75">
+                        <li>Music</li>
+                        <li>Anime</li>
+                        <li>Traveler</li>
+                        <li>Cooking</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4 reveal-center">
+                <div class="glass-box hover-glow">
+                    <h4>Skill</h4>
+                    <ul class="list-unstyled">
+                        <li><b>HTML</b><div class="skill-bar"><div class="skill-fill neon" data-width="85%"></div></div></li>
+                        <li><b>CSS</b><div class="skill-bar"><div class="skill-fill neon" data-width="70%"></div></div></li>
+                        <li><b>JavaScript</b><div class="skill-bar"><div class="skill-fill neon" data-width="30%"></div></div></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4 reveal-right">
+                <div class="glass-box hover-glow">
+                    <h4>Education</h4>
+                    <ul class="edu-list opacity-75">
+                        <li>SDN 0101 Sibubuan</li>
+                        <li>MTsN 01 Padang Lawas</li>
+                        <li>MAN 01 Padang Lawas</li>
+                        <li>STT Terpadu Nurul Fikri</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="gallery" class="section">
+    <div class="container">
+        <h2 class="section-title reveal"><b>MY GALLERY</b></h2>
+
+        <div class="row g-4 mt-4">
+            {% for i in "123" %}
+            <div class="col-md-4 reveal">
+                <div class="glass-card hover-glow">
+                    <img src="{% static 'images/gallery'|add:i|add:'.jpg' %}" alt="Gallery Image {{ i }}">
+                    <div class="gallery-overlay">
+                        <span>Image {{ i }}</span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}
